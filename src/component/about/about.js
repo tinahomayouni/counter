@@ -17,6 +17,8 @@ function About() {
     } else {
       born = true
     }
+
+
   })
 
   function growthHandeler() {
