@@ -1,0 +1,46 @@
+html {
+  margin: 0;
+  padding: 0;
+
+  body {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    header {
+      height: 100px;
+      background: #1e4165;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      nav {
+        a {
+          margin-right: 10px;
+          padding: 10px;
+          text-align: center;
+          display: inline-block;
+          text-decoration: none;
+        }
+      }
+
+      .header-about {
+        background: pink;
+      }
+
+      .header {
+        background: lightskyblue;
+      }
+    }
+
+    footer {
+      height: 100px;
+      background: gray;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  }
+}
