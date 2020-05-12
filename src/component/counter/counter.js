@@ -8,9 +8,11 @@ export default function Counter() {
 
   return (
     <>
-      <h1>I'm A Cool Counter {stateAsCounter /*from redux state*/}</h1>
-      <button onClick={(() => dispatch({ type: "INCREMENT" }))}>INCREMENT</button>
-      <button onClick={(() => dispatch({ type: "DECREMENT" }))}>DECREMENT</button>
+      <h1>I'm A Cool Counter : {stateAsCounter /*from redux state*/}</h1>
+      <div className="btnWrp">
+        <button className="inc" onClick={(() => dispatch({ type: "INCREMENT" }))}>INCREMENT</button>
+        <button className="dec" onClick={(() => dispatch({ type: "DECREMENT" }))}>DECREMENT</button>
+      </div>
     </>
   )
 }

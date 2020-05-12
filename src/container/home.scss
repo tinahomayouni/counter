@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+}
+.btnWrp {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  button {
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .dec {
+    background: lightcoral;
+  }
+
+  .inc {
+    background: lightgreen;
+  }
+}

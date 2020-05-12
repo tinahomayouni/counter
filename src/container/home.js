@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './header'
 import { Link } from 'react-router-dom';
 import Counter from '../component/counter/counter';
+import "./home.scss"
 
 function Home() {
   return (

@@ -3,6 +3,7 @@ import axios from 'axios'
 import PostItem from './postItem';
 import Header from '../../container/header';
 import { Link } from 'react-router-dom';
+import "./post.scss";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
