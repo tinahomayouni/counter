@@ -4,6 +4,7 @@ import Home from './container/home';
 import Contact from './component/contact/contact';
 import About from './component/about/about';
 import Posts from './component/posts/posts';
+import AsyncAction from './component/AsyncAction/asyncAction';
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
         <Route exact path="/about" component={About} />
         <Route exact path="/posts" component={Posts} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/asyncAction" component={AsyncAction} />
       </Switch>
     </>
   )
