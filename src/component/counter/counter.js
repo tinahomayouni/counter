@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Counter() {
-  const stateAsCounter = useSelector((state) => state.counter); //CB function that return state.counter [state from redux]
+  const stateAsCounter = useSelector((state) => state.reducer.counter); //CB function that return state.counter [state from redux]
 
   const dispatch = useDispatch();
 
