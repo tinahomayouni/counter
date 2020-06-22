@@ -23,19 +23,17 @@ export function asyncActionFailur (error){
     }
 }
 
-export function fetchData(){
-    return (dispatch)=>{
-        dispatch(asyncActionRequest)
-        Axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(res =>{
-                const users = res.data
-                dispatch(asyncActionSuccess(users)) 
-            })
-            .catch(err=>{
-                const error = error.message
-                dispatch(asyncActionFailur(error)) 
-
-            })
-
-    }
-}
+export async function fetchData(dispatch) {
+    console.log(dispatch, 'dispatch');
+    dispatch(asyncActionRequest());
+    Axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        console.log('then');
+        const users = res.data;
+        dispatch(asyncActionSuccess(users));
+      })
+      .catch(err => {
+        const error = error.message;
+        dispatch(asyncActionFailur(error));
+      });
+  } 
