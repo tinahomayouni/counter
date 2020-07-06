@@ -1,4 +1,4 @@
-import { SUCCESS, LOADING, FAIL } from "./const";
+import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL } from "./const";
 
 const initialStates = {
   name: '',
@@ -10,25 +10,25 @@ const initialStates = {
 
 
 
-function registerReducer(state = initialStates, action) {
+function loginReducer(state = initialStates, action) {
   switch (action.type) {
-    case LOADING:
+    case LOGIN:
       return {
         ...state,
         loading: true,
         name: action.payload.name,
         password: action.payload.password,
       }
-    case SUCCESS:
+    case LOGIN_SUCCESS:
       return {
-                ...state,
+        ...state,
         loading: false,
         data: action.payload,
         err: ''
       }
-    case FAIL:
+    case LOGIN_FAIL:
       return {
-                ...state,
+        ...state,
         loading: false,
         data: [],
         err: action.payload
@@ -38,4 +38,4 @@ function registerReducer(state = initialStates, action) {
   }
 }
 
-export default registerReducer;
+export default loginReducer;

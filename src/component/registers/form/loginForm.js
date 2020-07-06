@@ -2,25 +2,39 @@ import React, { useState } from 'react';
 import Header from '../../../container/header';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { registerLoading } from '../../../reducers/register/action';
-import "./loginForm.scss"
+import { login, loginSuccess } from '../../../reducers/login/action';
+import Axios from 'axios';
 
+import "./loginForm.scss"
 
 
 function LoginForm() {
   const [name, setName] = useState("");
-  const [password, setPass] = useState("");
-  // const nameState = useSelector(state => state.registerReducer.name)
-  // const passwordState = useSelector(state => state.registerReducer.password)
-  // const { name, password } = useSelector(state => state.registerReducer);
+  const [password, setPass] = useState("");//handle by components
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e && e.preventDefault();
-    dispatch(registerLoading({
+    dispatch(loginSuccess({
       name: name,
       password: password
-    }));
+    }
+    ));
+    const header = {
+      headers: { "token": "QpwL5tke4Pnpja7X4" }
+    }
+    Axios({
+      header,
+      url: "https://reqres.in/api/login",
+      type: "POST",
+      data: loginSuccess({
+        name: name,
+        password: password
+      }),
+      success: function (response) {
+        console.log(response);
+      }
+    });
   }
 
   return (
