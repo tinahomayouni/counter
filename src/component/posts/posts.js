@@ -12,14 +12,14 @@ function Posts() {
   useEffect(() => {
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(res => {
-        console.log(res)
+        // console.log(res)
         setPosts(res.data)
       })
       .catch(err => {
         console.log(err);
       })
   }, [])
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
       <Header>

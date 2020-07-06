@@ -5,6 +5,7 @@ import Contact from './component/contact/contact';
 import About from './component/about/about';
 import Posts from './component/posts/posts';
 import AsyncAction from './component/AsyncAction/asyncAction';
+import LoginForm from './component/registers/form/loginForm';
 
 function Routes() {
   return (
@@ -15,6 +16,8 @@ function Routes() {
         <Route exact path="/posts" component={Posts} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/asyncAction" component={AsyncAction} />
+        <Route exact path="/login" component={LoginForm} />
+
       </Switch>
     </>
   )
