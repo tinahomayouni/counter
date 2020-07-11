@@ -38,13 +38,14 @@ function LoginForm() {
       console.log(data, 'data');
       dispatch(loginSuccess(data.data));
       window.localStorage.setItem('login token', data.data.token);
-      history.push('./dashboard');
+      setTimeout(function () { history.push('/dashboard') }, 3000);
     } catch (e) {
       console.log(e.response.data.error, 'error in login');
       dispatch(loginFail(e.response.data.error));
+      toast.error(e.response.data.error)
     }
   };
-  const notify = async () => await toast(err);
+
   return (
     <>
       <Header>
@@ -69,7 +70,7 @@ function LoginForm() {
         <p>
           "email": "eve.holt@reqres.in",
     "password": "cityslicka"</p>
-        <button onClick={notify}>{loading ? 'Loading' : 'Submit'}</button>
+        <button>{loading ? 'Loading' : 'Submit'}</button>
       </form>
     </>
   );
