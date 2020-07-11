@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Header from "../../container/header";
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../../reducers/async/action';
+import { fetchData } from '../../redux/async/action';
 
 
 function AsyncAction() {

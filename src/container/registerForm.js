@@ -4,6 +4,9 @@ import Header from './header'
 import { Link, useHistory } from 'react-router-dom'
 import { register, registerFail, registerSuccess } from "../redux/register/action"
 import Axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import "./home.scss"
 
 
@@ -21,7 +24,6 @@ function RegisterForm() {
     dispatch(register({ email, password }))
 
     doRegisterRequest();
-
   }
 
   async function doRegisterRequest() {
@@ -32,14 +34,20 @@ function RegisterForm() {
         data: { email, password }
       })
       dispatch(registerSuccess(data.data))
+      console.log(data.request.status)
+      toast(data.request.status)
+
       window.localStorage.setItem('register token', data.data.token)
-      history.replace('/dashboard')
+      setTimeout(function () { history.replace('/dashboard') }, 3000);
+
 
     } catch (error) {
       // console.log(error.response.data.error, 'eror') remember response to show your error
       dispatch(registerFail(error.response.data.error))
+      toast.error(error.response.data.error)
     }
   }
+
   return (
     <>
       <Header>
@@ -47,6 +55,7 @@ function RegisterForm() {
           <Link to="/home">home</Link>
         </nav>
       </Header>
+      <ToastContainer />
       <p>{err ? err : ''}</p>
       <form onSubmit={onSubmit} id="register">
         <input onChange={(e) => { setEmail(e.target.value) }} value={email} type="text" />

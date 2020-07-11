@@ -3,7 +3,11 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, loginFail, loginSuccess } from '../redux/login/action';
 import { useHistory, Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import Header from './header';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -40,6 +44,7 @@ function LoginForm() {
       dispatch(loginFail(e.response.data.error));
     }
   };
+  const notify = async () => await toast(err);
   return (
     <>
       <Header>
@@ -48,6 +53,7 @@ function LoginForm() {
           <Link to="/register">register</Link>
         </nav>
       </Header>
+      <ToastContainer />
       <p>{err}</p>
       <form onSubmit={onSubmit} id="login">
         <input
@@ -63,7 +69,7 @@ function LoginForm() {
         <p>
           "email": "eve.holt@reqres.in",
     "password": "cityslicka"</p>
-        <button>{loading ? 'Loading' : 'Submit'}</button>
+        <button onClick={notify}>{loading ? 'Loading' : 'Submit'}</button>
       </form>
     </>
   );
