@@ -37,7 +37,7 @@ function About() {
     <>
       <Header>
         <nav className="header-about">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </nav>
       </Header>
       <h2>Growth : {Growth}</h2>

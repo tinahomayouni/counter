@@ -1,6 +1,6 @@
 import { LOGIN, LOGIN_SUCCESS, LOGIN_FAIL } from "./const";
 
-const initialStates = {
+const initialLoginState = {
   name: '',
   password: '',
   loading: false,
@@ -10,20 +10,19 @@ const initialStates = {
 
 
 
-function loginReducer(state = initialStates, action) {
+function loginReducer(state = initialLoginState, action) {
   switch (action.type) {
     case LOGIN:
       return {
         ...state,
         loading: true,
-        name: action.payload.name,
-        password: action.payload.password,
+        data: action.payload
       }
     case LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: action.data,
         err: ''
       }
     case LOGIN_FAIL:
@@ -31,7 +30,7 @@ function loginReducer(state = initialStates, action) {
         ...state,
         loading: false,
         data: [],
-        err: action.payload
+        err: action.error
       }
     default:
       return state

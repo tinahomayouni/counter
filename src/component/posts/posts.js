@@ -24,7 +24,7 @@ function Posts() {
     <>
       <Header>
         <nav className="header-about">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </nav>
       </Header>
       <ul>

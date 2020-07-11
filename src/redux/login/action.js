@@ -1,7 +1,4 @@
 import { LOGIN, LOGIN_FAIL, LOGIN_SUCCESS } from './const';
-import Axios from 'axios';
-
-
 
 export function login(payload) {
   return {
@@ -15,10 +12,10 @@ export function loginSuccess(data) {
     data
   }
 }
-export function loginFail(err) {
+export function loginFail(error) {
   return {
     type: LOGIN_FAIL,
-    err
+    error
   }
 }
 

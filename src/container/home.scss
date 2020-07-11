@@ -1,6 +1,7 @@
 h1 {
   text-align: center;
 }
+
 .btnWrp {
   display: flex;
   justify-content: center;
@@ -18,5 +19,34 @@ h1 {
 
   .inc {
     background: lightgreen;
+  }
+}
+
+header {
+  p {
+    color: #fff;
+  }
+}
+
+footer {
+  margin-top: 30px;
+}
+
+#login {
+  display: table;
+  margin: 0 auto;
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+#register {
+  display: table;
+  margin: 0 auto;
+  padding-top: 30px;
+
+  button {
+    margin-top: 10px;
   }
 }

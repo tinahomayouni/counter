@@ -9,11 +9,11 @@ function Home() {
     <div>
       <Header>
         <nav className="header">
-          <Link to="/">Counter</Link>
+          <Link to="/home">home</Link>
+          <Link to="/counter">Counter</Link>
           <Link to="/about">About Use Effect & Use State</Link>
           <Link to="/posts">Posts</Link>
           <Link to="/asyncAction">asyncAction</Link>
-          <Link to="/login">Login</Link>
           <Link to="/contact-us">Contact Us</Link></nav>
       </Header>
       <Counter />
